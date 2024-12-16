@@ -11,14 +11,14 @@ namespace Pi.Math.Tests
         public void PiTo6Dp()
         {
             var pi = MachinFormula.Calculate(6).ToString();
-            ClassicAssert.AreEqual(PI.Substring(0, 8), pi);
+            Assert.That(PI.Substring(0, 8), Is.EqualTo(pi));
         }
 
         [Test]
         public void PiTo20Dp()
         {
             var pi = MachinFormula.Calculate(20).ToString();
-            ClassicAssert.AreEqual(PI, pi);
+            Assert.That(PI, Is.EqualTo(pi));
         }
     }
 }

@@ -10,17 +10,19 @@ namespace Pi.Runtime.Tests
         public void Defaults()
         {
             var arguments = Args.Parse<Arguments>(new string[0]);
-            ClassicAssert.AreEqual(20, arguments.DecimalPlaces);
-            ClassicAssert.AreEqual(RunMode.Console, arguments.Mode);
-            ClassicAssert.AreEqual("/pi.txt", arguments.OutputPath);
+            Assert.That(20, Is.EqualTo(arguments.DecimalPlaces));
+            Assert.That(RunMode.Console, Is.EqualTo(arguments.Mode));
+            Assert.That("/pi.txt", Is.EqualTo(arguments.OutputPath));
         }
 
         [Test]
         public void DecimalPlaces()
         {
             var arguments = Args.Parse<Arguments>(new string[] { "-dp", "10" });
-            ClassicAssert.AreEqual(10, arguments.DecimalPlaces);
+            Assert.That(10, Is.EqualTo(arguments.DecimalPlaces));
+
         }
+
 
         [Test]
         public void Unknown()
