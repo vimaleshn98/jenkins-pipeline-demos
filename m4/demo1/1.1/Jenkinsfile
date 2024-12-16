@@ -4,6 +4,11 @@ pipeline {
             image 'mcr.microsoft.com/dotnet/core/sdk:3.1.101'
         }
     }
+    environment {
+        VERSION = "0.1.0"        
+        VERSION_RC = "rc.2"
+        DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+    }
     stages {
         stage('Verify') {
             steps {
